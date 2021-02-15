@@ -1,0 +1,14 @@
+<center>
+<section class="article-card card">
+  <h1>Create a New Article</h1>
+  <div class="card-body">
+    <%= form_with method: :post, url: "/articles", local: true do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "Enter Article Title" %>
+      <%= f.label :body %>
+      <%= f.text_field :body, placeholder: "Enter the article body text" %>
+      <%= f.submit "Create a New Article" %>
+    <% end %>
+  </div>
+</section>
+</center>
