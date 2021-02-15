@@ -1,11 +1,13 @@
 <center>
   <h1>Your Articles</h1>
-
-  <section class="article-card card">
-    <h1>Create a New Article</h1>
-    <div class="card-body">
-      <%= form_with method: :post, url: "/articles", local: true do |f| %>
-      <% end %>
-    </div>
-  </section>
-</center>
+    <% @articles.each do |article| %>
+    <section class="articles">
+      <h3><%= article.title %></h3>
+      <p><%= article.body %></p>
+    </section>
+    <% end %>
+    <br>
+    <section class="new_link">
+      <a href="/articles/new">Create a New Article</a>
+    </section>
+  </center>
