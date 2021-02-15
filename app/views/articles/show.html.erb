@@ -1,0 +1,10 @@
+<center>
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>
+<br>
+<br>
+<%= link_to("Update Article", "/articles/#{@article.id}/edit") %>
+<br>
+<br>
+<%= link_to("Delete Article", "/articles/#{@article.id}", method: :delete) %>
+</center>
