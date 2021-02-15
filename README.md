@@ -82,6 +82,50 @@ Step 7: Create the database with the following command
 rails db:create
 ```
 
+Step 8: Create a model (migration) with the following command
+
+```
+rails generate model Article title:string body:text
+```
+
+I then double checked that my migration looked the way I wanted it to. 
+
+```
+class CreateArticles < ActiveRecord::Migration[6.1]
+  def change
+    create_table :articles do |t|
+      t.string :title
+      t.text :body
+
+      t.timestamps
+    end
+  end
+end
+```
+
+Then I ran the following command:
+
+```
+rails db:migrate
+```
+
+This created my schema with the following table:
+
+```
+ActiveRecord::Schema.define(version: 2021_02_15_161206) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+end
+```
+
 ## TDD
 
 I was taught to implement Test Driven Development. So the next thing that I did was create a `features` directory withing the `spec` directory. For this one, I created `Articles` directory and within that directory I included the various tests that I felt necessary. 
