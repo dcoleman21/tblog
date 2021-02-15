@@ -1,6 +1,11 @@
 # README
 
-This is a simple rails application implementing CRUD functionality for a blog/article based application. This app allows a user to see all articles that they have written, create a new article, update/edit an existing article and delete and article.  
+This is a simple rails application implementing CRUD functionality for a blog/article based application. This app allows a user to see all articles that they have written, create a new article, update/edit an existing article and delete and article. 
+
+## Table of Contents
+- [Setup](#setup)
+- [My Process](#my-process)
+- [TDD](#tdd)
 
 ## Setup
 
